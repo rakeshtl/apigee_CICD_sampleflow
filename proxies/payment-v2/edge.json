@@ -1,0 +1,76 @@
+{
+    "version": "1.0",
+    "envConfig": {
+        "test": {
+          "targetServers": [
+              {
+                "name" : "mock",
+                "host" : "sudheendrascna-eval-test",
+                "isEnabled" : true,
+                "port" : 80
+              }
+          ],
+          "resourcefiles":[
+              {
+                "name": "test",
+                "type": "jsc",
+                "file": "./resourceFiles/jsc/test.js"
+              }
+          ],
+          "kvms": [
+            {
+                "name": "spikeArrestLimitMap",
+                "entry": [
+                    {
+                        "name": "payment-v2",
+                        "value": "10ps"
+                    }
+                ]
+            }
+        ],
+          "flowhooks":[
+               {
+                  "name":"PostProxyFlowHook",
+                  "continueOnError":"true",
+                  "sharedFlow":"logging_sharedflow"
+               }
+            ]
+        },
+        "prod": {
+          "targetServers": [
+              {
+                "name" : "mock",
+                "host" : "sudheendrascna-eval-prod",
+                "isEnabled" : true,
+                "port" : 80
+              }
+          ],
+          "resourcefiles":[
+              {
+                "name": "test",
+                "type": "jsc",
+                "file": "./resourceFiles/jsc/test.js"
+              }
+          ],
+          "kvms": [
+            {
+                "name": "spikeArrestLimitMap",
+                "entry": [
+                    {
+                        "name": "payment-v2",
+                        "value": "10ps"
+                    }
+                ]
+            }
+        ],
+          "flowhooks":[
+               {
+                  "name":"PostProxyFlowHook",
+                  "continueOnError":"true",
+                  "sharedFlow":"logging_sharedflow"
+               }
+            ]
+        }
+    },
+    "orgConfig": {}
+}
